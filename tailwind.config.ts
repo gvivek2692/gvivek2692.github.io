@@ -24,6 +24,7 @@ const config: Config = {
         'muted-foreground': 'rgb(var(--muted-foreground) / <alpha-value>)',
         border: 'rgb(var(--border) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
+        'accent-solid': 'rgb(var(--accent-solid) / <alpha-value>)',
         'accent-foreground': 'rgb(var(--accent-foreground) / <alpha-value>)',
         card: 'rgb(var(--card) / <alpha-value>)',
       },

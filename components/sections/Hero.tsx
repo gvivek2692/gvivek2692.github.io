@@ -77,7 +77,7 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-transform hover:-translate-y-0.5 cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-md bg-accent-solid px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 cursor-pointer"
           >
             Get in touch
           </a>
@@ -88,7 +88,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent cursor-pointer"
             >
-              <Download className="h-4 w-4" />
+              <Download className="h-4 w-4" aria-hidden="true" />
               Download CV
             </a>
           )}
@@ -115,7 +115,7 @@ export function Hero() {
           variants={fade}
           className="mt-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground"
         >
-          <MapPin className="h-4 w-4" />
+          <MapPin className="h-4 w-4" aria-hidden="true" />
           {siteConfig.location}
         </motion.p>
       </div>
@@ -125,7 +125,7 @@ export function Hero() {
         aria-label="Scroll to content"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground transition-colors hover:text-accent cursor-pointer"
       >
-        <ArrowDown className="h-5 w-5 animate-bounce" />
+        <ArrowDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
       </a>
     </section>
   );

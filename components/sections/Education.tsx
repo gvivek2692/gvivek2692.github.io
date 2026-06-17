@@ -11,7 +11,7 @@ export function Education() {
           <Reveal key={e.degree} delay={(i % 2) * 0.06}>
             <div className="flex h-full gap-4 rounded-lg border border-border bg-card p-6">
               <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-muted text-accent">
-                <GraduationCap className="h-5 w-5" />
+                <GraduationCap className="h-5 w-5" aria-hidden="true" />
               </span>
               <div>
                 <h3 className="font-display font-semibold">{e.degree}</h3>

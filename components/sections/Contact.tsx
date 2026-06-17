@@ -19,9 +19,9 @@ export function Contact() {
 
           <a
             href={`mailto:${siteConfig.email}`}
-            className="mt-7 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-transform hover:-translate-y-0.5 cursor-pointer"
+            className="mt-7 inline-flex items-center gap-2 rounded-md bg-accent-solid px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 cursor-pointer"
           >
-            <Mail className="h-4 w-4" />
+            <Mail className="h-4 w-4" aria-hidden="true" />
             {siteConfig.email}
           </a>
 

@@ -43,7 +43,12 @@ export const metadata: Metadata = {
 };
 
 // Inject the accent token from config so the whole palette rebrands from one place.
-const accentStyle = `:root{--accent:${siteConfig.accentRGB}}.dark{--accent:${siteConfig.accentRGBDark}}`;
+// --accent is the per-mode value used for text, links, and icons (lighter in dark
+// mode for readability). --accent-solid is always the deeper brand blue, used for
+// solid fills with white labels so they keep 4.5:1 contrast in both modes.
+const accentStyle =
+  `:root{--accent:${siteConfig.accentRGB};--accent-solid:${siteConfig.accentRGB}}` +
+  `.dark{--accent:${siteConfig.accentRGBDark};--accent-solid:${siteConfig.accentRGB}}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
