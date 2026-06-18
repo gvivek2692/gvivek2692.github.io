@@ -5,6 +5,7 @@ and Tailwind, exported as a static site, and hosted free on GitHub Pages. You
 make it yours by editing two files. No build tooling to learn, no backend.
 
 **Live:** https://mrazam110.github.io
+**Article:** [I built a developer portfolio you can fill with one AI prompt](https://medium.com/@mrazam110/i-built-a-developer-portfolio-you-can-fill-with-one-ai-prompt-cee95a2be262)
 
 ![Preview](public/og-image.png)
 

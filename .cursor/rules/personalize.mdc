@@ -11,6 +11,8 @@ Key rules:
 
 - Almost all edits happen in two files: `config/site.config.ts` (identity,
   accent, socials, section toggles) and `data/portfolio.ts` (all content).
+  Supported social icon keys: `github`, `linkedin`, `medium`, `toptal`,
+  `stackoverflow`, `mail`, `globe`.
 - Do not touch `app/`, `components/`, `lib/`, or any build or config file.
 - Never use em dashes or en dashes. Use commas, periods, colons, or
   parentheses. Apply `.claude/skills/humanizer/SKILL.md` to all prose.

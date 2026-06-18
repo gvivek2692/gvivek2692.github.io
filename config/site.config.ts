@@ -23,7 +23,7 @@ export interface SocialLink {
   label: string;
   href: string;
   /** One of the keys handled in components/ui/SocialIcons. */
-  icon: 'github' | 'linkedin' | 'toptal' | 'stackoverflow' | 'mail' | 'globe';
+  icon: 'github' | 'linkedin' | 'toptal' | 'stackoverflow' | 'mail' | 'globe' | 'medium';
 }
 
 export interface SiteConfig {
@@ -89,6 +89,7 @@ export const siteConfig: SiteConfig = {
   socials: [
     { label: 'GitHub', href: 'https://github.com/mrazam110', icon: 'github' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mrazam110', icon: 'linkedin' },
+    { label: 'Medium', href: 'https://medium.com/@mrazam110', icon: 'medium' },
     {
       label: 'Toptal',
       href: 'https://www.toptal.com/developers/resume/muhammad-raza-master',

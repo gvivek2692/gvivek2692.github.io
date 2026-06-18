@@ -20,7 +20,8 @@ It is the one-prompt recipe and the single source of truth for that flow.
 Almost all real edits happen in:
 
 - `config/site.config.ts`: identity, accent color, fonts, social links, SEO,
-  and per-section on/off toggles.
+  and per-section on/off toggles. Supported social icon keys: `github`,
+  `linkedin`, `medium`, `toptal`, `stackoverflow`, `mail`, `globe`.
 - `data/portfolio.ts`: all content (about, skills, experience, projects,
   education, certifications). Typed, so the editor guides changes.
 

@@ -108,7 +108,7 @@ export const portfolio: PortfolioData = {
     },
     {
       title: 'AI & APIs',
-      items: ['Claude API', 'Claude Code', 'AI Integration', 'REST', 'GraphQL', 'WebSocket', 'Socket.IO'],
+      items: ['Claude API', 'Claude Code', 'OpenClaw', 'Hermes Agent', 'Cursor', 'AI Integration', 'REST', 'GraphQL', 'WebSocket', 'Socket.IO'],
     },
     {
       title: 'CI/CD & DevOps',
@@ -243,7 +243,7 @@ export const portfolio: PortfolioData = {
     {
       name: 'Discernion',
       description:
-        'An AI-powered news desk I built solo. A TypeScript pipeline pulls from 27 publishers every two hours and runs each story through an AI model cascade for summaries, sentiment, and importance scores.',
+        'An AI-powered news desk I built solo. A TypeScript pipeline pulls from 300+ publishers every two hours and runs each story through an AI model cascade for summaries, sentiment, and importance scores.',
       href: 'https://www.discernion.com',
       tech: ['Next.js 15', 'Supabase', 'PostgreSQL', 'TypeScript', 'Vercel'],
       tag: 'Live',
