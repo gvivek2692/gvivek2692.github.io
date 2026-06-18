@@ -190,7 +190,6 @@ export const portfolio: PortfolioData = {
       location: 'Remote',
       start: '2018',
       end: '2018',
-      via: 'via Toptal',
       points: [
         'Built a fintech iOS app from zero to launch that let non-technical users invest in crypto.',
         'Implemented custom UI and animations from Figma specs and integrated Rave for card payments.',
