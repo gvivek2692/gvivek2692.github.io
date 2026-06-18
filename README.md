@@ -1,68 +1,81 @@
 # Developer Portfolio
 
-An open-source developer portfolio built with Next.js, TypeScript, and Tailwind.
-Dark first, fast, and static. It deploys to GitHub Pages for free, and you make
-it yours by editing two files.
+A clean, fast, open-source developer portfolio. Built with Next.js, TypeScript,
+and Tailwind, exported as a static site, and hosted free on GitHub Pages. You
+make it yours by editing two files. No build tooling to learn, no backend.
 
-Live: https://mrazam110.github.io
+**Live:** https://mrazam110.github.io
 
 ![Preview](public/og-image.png)
 
-## Why this exists
+## Why use this
 
-Most portfolio templates either look like everyone else's or take a weekend to
-customize. This one separates content from code, so you change your details in
-two typed files and never touch a component. The design follows a real system
-(monochrome neutrals, one accent, restrained motion) rather than a generic AI
-look.
+- Your content lives in two typed files. You never touch component code.
+- Dark first, with a light toggle and one accent color you change in one line.
+- Sections you can switch on or off: about, skills, experience, projects,
+  education, certifications, contact.
+- Animations that stay out of the way and respect reduced-motion.
+- Accessible by default: AA contrast, keyboard focus, labeled controls.
+- Good SEO and social cards (Open Graph image, metadata) with no setup.
+- Free hosting on GitHub Pages through a ready-made GitHub Actions workflow.
 
-## Features
+## Quick start
 
-- Next.js App Router, TypeScript, Tailwind, static export
-- Light and dark mode with a single accent color you can change in one line
-- Sections for about, skills, experience, projects, education, certifications,
-  and contact, each with an on/off toggle
-- Restrained, accessible animations that respect reduced-motion
-- Good SEO and social cards out of the box (Open Graph image, metadata)
-- Free hosting on GitHub Pages via a ready-made GitHub Actions workflow
-- Two Claude Code skills bundled in `.claude/skills` so you can keep your copy
-  human and your design sharp (see Skills below)
+```bash
+# 1. Fork this repo (button top-right on GitHub), then clone your fork
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
 
-## Make it yours (fork guide)
+# 2. Install and run locally
+npm install
+npm run dev          # open http://localhost:3000
 
-1. Fork this repo.
-2. Rename your fork. For a personal site at `https://<you>.github.io`, name the
-   repo exactly `<you>.github.io`. Any other name gives you a project site at
-   `https://<you>.github.io/<repo>`, which also works.
-3. Clone it and run it locally:
-   ```bash
-   npm install
-   npm run dev
-   ```
-4. Edit `config/site.config.ts`: your name, role, tagline, email, social links,
-   accent color, the hero rotating words, and which sections to show.
-5. Edit `data/portfolio.ts`: your about text, skills, experience, projects,
-   education, and certifications. The types guide you.
-6. Replace the files in `public/`: `cv.pdf`, `og-image.png`, and `favicon.svg`.
-7. Commit and push. In your repo, open Settings, then Pages, and set the source
-   to GitHub Actions (one time). The included workflow builds and deploys on
-   every push.
+# 3. Edit two files (see below), then push. It deploys itself.
+```
 
-That is the whole loop. You should not need to edit anything under `app/` or
-`components/`.
+For a personal site at `https://<your-username>.github.io`, name your repo
+exactly `<your-username>.github.io`. Any other name gives a project site at
+`https://<your-username>.github.io/<repo>`, which also works with no changes.
 
-### What you edit vs. what you leave alone
+## The two files you edit
 
-| Edit these | Leave alone |
-|---|---|
-| `config/site.config.ts` (identity, theme, toggles) | `app/`, `components/` (the engine) |
-| `data/portfolio.ts` (all content) | `next.config.js`, `tailwind.config.ts` |
-| `public/` assets (cv.pdf, og-image, favicon) | `.github/workflows/deploy.yml` |
+Everything personal lives here. The rest is the engine.
 
-### Change the accent color
+### 1. `config/site.config.ts` (who you are and how it looks)
 
-In `config/site.config.ts`, set `accentRGB` (and `accentRGBDark`) to an
-`"R G B"` string. The whole palette follows. A few options:
+```ts
+name: 'Your Name',
+logoText: 'You',            // short text for the nav logo
+role: 'Software Engineer',
+tagline: 'One line about you.',
+email: 'you@example.com',
+url: 'https://you.github.io',
+resumePath: '/cv.pdf',      // file in /public, or '' to hide the button
+
+accentRGB: '37 99 235',     // brand color as "R G B" (light mode)
+accentRGBDark: '59 130 246',// brand color in dark mode
+
+heroRotatingWords: ['iOS Developer', 'Full-Stack Developer'],
+
+socials: [ /* github, linkedin, etc. */ ],
+
+sections: { about: true, skills: true, /* ... set any to false */ },
+```
+
+### 2. `data/portfolio.ts` (your content)
+
+About text, skills, experience, projects, education, certifications. The types
+guide you as you type. To add an experience, copy an existing block in the
+`experience` array and change the values.
+
+### What you do not touch
+
+`app/`, `components/`, `next.config.js`, `tailwind.config.ts`, and the deploy
+workflow. They are the engine and they stay the same.
+
+## Customizing
+
+**Change the accent color.** One line in `config/site.config.ts`:
 
 ```ts
 accentRGB: '37 99 235',   // blue (default)
@@ -70,37 +83,53 @@ accentRGB: '5 150 105',   // emerald
 accentRGB: '124 58 237',  // violet
 ```
 
-### Hide a section
-
-Set its toggle to `false` in `config/site.config.ts`. The section and its nav
-link disappear, no code deleted:
+**Hide a section.** Set its toggle to `false`. The section and its nav link
+disappear, no code deleted:
 
 ```ts
-sections: {
-  certifications: false,
-  // ...
-}
+sections: { certifications: false }
 ```
 
-## Skills bundled with this repo
+**Swap the assets.** Replace these in `public/`: `cv.pdf` (your resume),
+`og-image.png` (social preview, 1200x630), `favicon.svg`.
 
-Open this repo in Claude Code and these are available right away, no install.
+## Deploy to GitHub Pages
 
-- `/humanizer` — rewrites copy to remove AI tells. House rule it enforces: no em
-  dashes. Run it on your about text and project blurbs before you publish.
-- `ui-ux-pro-max` — design intelligence. Ask Claude for UI help and it picks a
-  style, palette, typography, and anti-patterns for your sector. The current
-  design system came from it. Spec lives in `DESIGN_SYSTEM.md`.
+1. Push to your repo's default branch.
+2. In your repo, open **Settings, then Pages**, and set **Source** to
+   **GitHub Actions** (one time).
+3. The included workflow builds and publishes on every push. Your site is live
+   at `https://<your-username>.github.io`.
 
-Both are MIT licensed and credited in `.claude/skills/CREDITS.md`.
+## Built with Claude Code
 
-## Local development
+This portfolio was built with [Claude Code](https://claude.com/claude-code).
+Two skills are bundled in `.claude/skills` so anyone who opens the repo in
+Claude Code can use them right away, with nothing to install:
 
-```bash
-npm install      # install dependencies
-npm run dev      # start the dev server at http://localhost:3000
-npm run build    # production build and static export to ./out
-```
+- **humanizer** removes AI writing patterns from your copy. Open the repo in
+  Claude Code and run `/humanizer` on your about text or project descriptions
+  before you publish. House rule it enforces here: no em dashes.
+- **ui-ux-pro-max** is a design assistant. Ask Claude for UI help (for example
+  "improve the projects section spacing") and it applies a real design system:
+  style, color, typography, and the anti-patterns to avoid. The design here was
+  shaped by it. The full spec lives in `DESIGN_SYSTEM.md`.
+
+You do not need Claude Code to use this template. The site is a normal Next.js
+app. The skills are a bonus for anyone who wants AI help while customizing.
+
+## Credits
+
+- Inspired by [developerFolio](https://github.com/saadpasta/developerFolio) by
+  Saad Pasta.
+- Design intelligence from the
+  [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
+  skill by nextlevelbuilder.
+- Copy kept human with the [humanizer](https://github.com/blader/humanizer)
+  skill by blader.
+
+Both bundled skills are MIT licensed and credited in
+`.claude/skills/CREDITS.md`.
 
 ## Tech
 
@@ -109,4 +138,4 @@ next-themes, Lucide icons.
 
 ## License
 
-MIT. See `LICENSE`. If you use this, a link back is appreciated but not required.
+MIT. See `LICENSE`. Use it freely. A link back is appreciated but not required.
