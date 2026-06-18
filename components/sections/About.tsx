@@ -17,7 +17,7 @@ export function About() {
         </div>
 
         <Reveal delay={0.1}>
-          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-1">
+          <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3 md:grid-cols-1">
             {highlights.map((h) => (
               <div key={h.label} className="bg-card p-5">
                 <dt className="text-xs uppercase tracking-wide text-muted-foreground">{h.label}</dt>

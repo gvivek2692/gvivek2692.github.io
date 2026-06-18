@@ -79,7 +79,6 @@ export const portfolio: PortfolioData = {
     ],
     highlights: [
       { label: 'Experience', value: '10+ years' },
-      { label: 'Crash-free rate', value: '99.84%+' },
       { label: 'Based in', value: 'Berlin, Germany' },
       { label: 'Status', value: 'Toptal verified' },
     ],
