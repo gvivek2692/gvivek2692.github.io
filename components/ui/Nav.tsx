@@ -37,7 +37,7 @@ export function Nav() {
     >
       <nav className="container-content flex h-16 items-center justify-between">
         <a href="#top" className="font-display text-lg font-bold tracking-tight">
-          {siteConfig.name.split(' ')[0]}
+          {siteConfig.logoText || siteConfig.name.split(' ')[0]}
           <span className="text-accent">.</span>
         </a>
 

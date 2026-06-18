@@ -33,7 +33,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
-          Open to new opportunities
+          Available
         </motion.p>
 
         <motion.h1
@@ -41,7 +41,7 @@ export function Hero() {
           initial="hidden"
           animate="show"
           variants={fade}
-          className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-6xl md:text-7xl"
+          className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl"
         >
           {siteConfig.name}
         </motion.h1>

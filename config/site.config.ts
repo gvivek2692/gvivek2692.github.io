@@ -29,6 +29,8 @@ export interface SocialLink {
 export interface SiteConfig {
   /** Shown in the browser tab and used across SEO meta. */
   name: string;
+  /** Short text for the nav logo. Defaults to the first name if left empty. */
+  logoText: string;
   role: string;
   /** Short, one-line value statement for the hero and meta description. */
   tagline: string;
@@ -63,7 +65,8 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Muhammad Raza',
+  name: 'Muhammad Raza Master',
+  logoText: 'Raza',
   role: 'Software Engineer',
   tagline:
     'Software engineer with 10+ years building iOS apps and full-stack products used worldwide. Toptal verified, based in Berlin.',
