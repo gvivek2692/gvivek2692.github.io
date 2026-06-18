@@ -122,8 +122,7 @@ app. The skills are a bonus for anyone who wants AI help while customizing.
 
 - Inspired by [developerFolio](https://github.com/saadpasta/developerFolio) by
   Saad Pasta.
-- Inspired by [Brittany Chiang's v4](https://github.com/bchiang7/v4), the
-  most-forked developer portfolio.
+- Inspired by [Brittany Chiang's v4](https://github.com/bchiang7/v4).
 - Design intelligence from the
   [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
   skill by nextlevelbuilder.
