@@ -76,9 +76,9 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: 'Muhammad Raza Master',
   logoText: 'Raza',
-  role: 'Software Engineer',
+  role: 'Senior iOS & Full-Stack Engineer',
   tagline:
-    'Software engineer with 10+ years building iOS apps and full-stack products used worldwide. Toptal verified, based in Berlin.',
+    'I build high-performance iOS applications and AI-driven full-stack products. 13+ years of engineering experience, Toptal verified, and based in Berlin.',
   location: 'Berlin, Germany',
   email: 'mrazam110@gmail.com',
   phone: '',

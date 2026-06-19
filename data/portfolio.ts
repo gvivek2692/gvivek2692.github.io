@@ -73,14 +73,13 @@ export interface PortfolioData {
 export const portfolio: PortfolioData = {
   about: {
     paragraphs: [
-      'I build iOS apps that thousands of people use daily. Over the past decade I have worked across fintech, healthcare, messaging, and consumer products, usually as the person responsible for the app end to end.',
-      'My core is Swift, SwiftUI, UIKit, and Combine, and I know my way around clean architecture and CI/CD. Lately I have folded AI-assisted workflows into how I ship, including the Claude API and Claude Code. When an idea needs a web home, I build it full-stack in Next.js.',
-      'I am a Toptal verified expert based in Berlin, open to senior and lead engineering roles, remote or hybrid.',
+      'I am a Senior iOS Specialist and Full-Stack Engineer with over a decade of experience taking products from blank canvas to App Store. Ranked in the top 3% of global engineers, I build mobile apps that stay fast and reliable at scale.',
+      "I work with a founder's mindset: ship fast, sweat the UX, keep the architecture clean. Lately that means building AI-driven products and folding AI into how I build them. Based in Berlin, I'm open to Senior, Lead, or Founding Engineer roles, remote or hybrid.",
     ],
     highlights: [
-      { label: 'Experience', value: '10+ years' },
+      { label: 'Experience', value: '13+ years' },
+      { label: 'Focus', value: 'iOS, AI & Full-stack' },
       { label: 'Based in', value: 'Berlin, Germany' },
-      { label: 'Status', value: 'Toptal verified' },
     ],
   },
 
@@ -139,7 +138,7 @@ export const portfolio: PortfolioData = {
         'Run technical interviews, code reviews, and pairing sessions to keep code quality and team standards high.',
         'Shipped Claude API and AI chatbot features using AI-assisted development workflows.',
       ],
-      tech: ['Swift', 'SwiftUI', 'UIKit', 'Apple Pay', 'Stripe', 'Claude API', 'GA4', 'TestFlight'],
+      tech: ['Swift', 'SwiftUI', 'UIKit', 'Apple Pay', 'Braintree', 'Claude Code', 'TestFlight', 'Fastlane'],
     },
     {
       role: 'iOS Developer',
@@ -229,15 +228,23 @@ export const portfolio: PortfolioData = {
     {
       name: 'Discernion',
       description:
-        'An AI-powered news desk I built solo. A TypeScript pipeline pulls from 300+ publishers every two hours and runs each story through an AI model cascade for summaries, sentiment, and importance scores.',
+        'A solo-built AI news intelligence platform. An automated TypeScript ingestion pipeline pulls from 300+ publishers every two hours and routes each story through a multi-model AI cascade that generates summaries, sentiment, and importance scores at scale.',
       href: 'https://www.discernion.com',
       tech: ['Next.js 15', 'Supabase', 'PostgreSQL', 'TypeScript', 'Vercel'],
       tag: 'Live',
     },
     {
+      name: 'PlayAcorn',
+      description:
+        'A cosy, ad-free games platform for kids ages 3 to 12. Built on Astro with React islands for a zero-JS-by-default static shell, isolated games run in sandboxed iframes and talk to the portal through a custom Game Bridge, with all progress kept on-device.',
+      href: 'https://playacorn.com',
+      tech: ['Astro', 'React', 'TypeScript', 'Tailwind', 'Vercel'],
+      tag: 'Live',
+    },
+    {
       name: 'GadgetByRaza',
       description:
-        'A developer-tools site with 30+ browser-based utilities: JSON beautifier, JWT decoder, regex tester, QR generator, Swift Codable generator, and live crypto whale-trade streaming over a Binance WebSocket.',
+        'A developer-tools platform with 30+ browser-based utilities: JSON beautifier, JWT decoder, regex tester, QR generator, and a Swift Codable generator, plus a real-time crypto whale-trade feed streamed over a Binance WebSocket.',
       href: 'https://gadgetbyraza.com',
       tech: ['Next.js 14', 'TypeScript', 'Tailwind', 'Vercel'],
       tag: 'Live',
@@ -254,6 +261,14 @@ export const portfolio: PortfolioData = {
       description: 'An open-source CocoaPod that adds floating labels and validation to UITextField.',
       href: 'https://cocoapods.org/pods/MRTextField',
       tech: ['Swift', 'UIKit', 'CocoaPods'],
+      tag: 'Open Source',
+    },
+    {
+      name: 'Developer Portfolio',
+      description:
+        'This site, open-sourced as a forkable template. A statically exported Next.js App Router build with a config-driven design system, runtime-injected accent theming, and a two-file content model so anyone can rebrand it without touching components.',
+      href: 'https://github.com/mrazam110/mrazam110.github.io',
+      tech: ['Next.js', 'TypeScript', 'Tailwind', 'GitHub Pages'],
       tag: 'Open Source',
     },
   ],

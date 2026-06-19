@@ -32,7 +32,23 @@ export const metadata: Metadata = {
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.tagline,
-  keywords: [siteConfig.role, siteConfig.name, 'iOS', 'Swift', 'SwiftUI', 'portfolio'],
+  keywords: [
+    siteConfig.role,
+    siteConfig.name,
+    'iOS',
+    'Swift',
+    'SwiftUI',
+    'Full-Stack',
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Node.js',
+    'AI Integration',
+    'LLM',
+    'Toptal',
+    'Berlin',
+    'portfolio',
+  ],
   authors: [{ name: siteConfig.name }],
   openGraph: {
     type: 'website',
@@ -59,6 +75,21 @@ const accentStyle =
   `:root{--accent:${siteConfig.accentRGB};--accent-solid:${siteConfig.accentRGB}}` +
   `.dark{--accent:${siteConfig.accentRGBDark};--accent-solid:${siteConfig.accentRGB}}`;
 
+// Machine-readable identity for search engines, recruiter tools, and LLMs.
+// Built entirely from siteConfig so it rebrands with the rest of the site.
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteConfig.name,
+  jobTitle: siteConfig.role,
+  description: siteConfig.tagline,
+  url: siteConfig.url,
+  image: `${siteConfig.url}/og-image.png`,
+  ...(siteConfig.email ? { email: `mailto:${siteConfig.email}` } : {}),
+  address: { '@type': 'PostalAddress', addressLocality: siteConfig.location },
+  sameAs: siteConfig.socials.map((s) => s.href),
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -68,6 +99,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <style dangerouslySetInnerHTML={{ __html: accentStyle }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
