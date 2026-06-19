@@ -145,8 +145,8 @@ export const portfolio: PortfolioData = {
       role: 'iOS Developer',
       company: 'ASD.ai',
       location: 'Remote',
-      start: '2020',
-      end: '2022',
+      start: 'Aug 2020',
+      end: 'Jan 2022',
       via: 'via Toptal',
       points: [
         'Built Rootines, an iOS app that helps clinicians track daily routines for neurodiverse patients.',
