@@ -31,11 +31,11 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 lg:hidden ${
         scrolled ? 'border-b border-border bg-background/80 backdrop-blur-md' : 'border-b border-transparent'
       }`}
     >
-      <nav className="container-content flex h-16 items-center justify-between">
+      <nav aria-label="Primary" className="container-rail flex h-16 items-center justify-between">
         <a href="#top" className="font-display text-lg font-bold tracking-tight">
           {siteConfig.logoText || siteConfig.name.split(' ')[0]}
           <span className="text-accent">.</span>
@@ -72,7 +72,7 @@ export function Nav() {
 
       {open && (
         <div className="border-t border-border bg-background md:hidden">
-          <div className="container-content flex flex-col py-2">
+          <div className="container-rail flex flex-col py-2">
             {items.map((key) => (
               <a
                 key={key}

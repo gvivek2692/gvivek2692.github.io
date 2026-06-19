@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, MapPin } from 'lucide-react';
+import { Download, MapPin } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { TypingText } from '@/components/ui/TypingText';
 import { SocialIcon } from '@/components/ui/SocialIcon';
@@ -16,24 +16,28 @@ const fade = {
   }),
 };
 
+/**
+ * Identity block for mobile and tablet (< lg), where the desktop Rail is
+ * hidden. Carries the name, rotating roles, value statement, and actions.
+ */
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="top" className="relative overflow-hidden lg:hidden">
       <div className="absolute inset-0 hero-grid" aria-hidden="true" />
 
-      <div className="container-content relative flex min-h-[92vh] flex-col justify-center py-28">
+      <div className="relative flex min-h-[88vh] flex-col justify-center py-24">
         <motion.p
           custom={0}
           initial="hidden"
           animate="show"
           variants={fade}
-          className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-sm text-secondary"
+          className="mb-6 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-secondary"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
-          Available
+          Available for work
         </motion.p>
 
         <motion.h1
@@ -41,7 +45,7 @@ export function Hero() {
           initial="hidden"
           animate="show"
           variants={fade}
-          className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl md:text-6xl"
+          className="font-display text-5xl font-semibold leading-[1.02] tracking-tight text-balance sm:text-6xl"
         >
           {siteConfig.name}
         </motion.h1>
@@ -51,11 +55,11 @@ export function Hero() {
           initial="hidden"
           animate="show"
           variants={fade}
-          className="mt-4 flex flex-wrap items-baseline gap-x-3 text-xl font-medium text-secondary sm:text-2xl md:text-3xl"
+          className="mt-5 flex flex-wrap items-baseline gap-x-3 font-mono text-base text-secondary sm:text-lg"
         >
           <span>{siteConfig.role}</span>
           <span className="text-border">/</span>
-          <TypingText words={siteConfig.heroRotatingWords} className="font-display text-foreground" />
+          <TypingText words={siteConfig.heroRotatingWords} className="text-foreground" />
         </motion.div>
 
         <motion.p
@@ -63,7 +67,7 @@ export function Hero() {
           initial="hidden"
           animate="show"
           variants={fade}
-          className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
+          className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground text-pretty md:text-lg"
         >
           {siteConfig.tagline}
         </motion.p>
@@ -92,7 +96,16 @@ export function Hero() {
               Download CV
             </a>
           )}
-          <div className="ml-1 flex items-center gap-1">
+        </motion.div>
+
+        <motion.div
+          custom={5}
+          initial="hidden"
+          animate="show"
+          variants={fade}
+          className="mt-8 flex items-center gap-4"
+        >
+          <div className="flex items-center gap-1">
             {siteConfig.socials.map((s) => (
               <a
                 key={s.label}
@@ -106,27 +119,13 @@ export function Hero() {
               </a>
             ))}
           </div>
+          <span className="h-5 w-px bg-border" aria-hidden="true" />
+          <span className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground">
+            <MapPin className="h-4 w-4" aria-hidden="true" />
+            {siteConfig.location}
+          </span>
         </motion.div>
-
-        <motion.p
-          custom={5}
-          initial="hidden"
-          animate="show"
-          variants={fade}
-          className="mt-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground"
-        >
-          <MapPin className="h-4 w-4" aria-hidden="true" />
-          {siteConfig.location}
-        </motion.p>
       </div>
-
-      <a
-        href="#about"
-        aria-label="Scroll to content"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground transition-colors hover:text-accent cursor-pointer"
-      >
-        <ArrowDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
-      </a>
     </section>
   );
 }

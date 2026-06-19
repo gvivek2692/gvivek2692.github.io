@@ -40,6 +40,9 @@ once it reads this file, so you do not have to spell it out.
    - `url` to `https://<their-username>.github.io` (or the project-site URL if
      the repo is not named `<username>.github.io`).
    - `heroRotatingWords`, `logoText`, and `socials` from their background.
+   - `repoUrl` to their fork's GitHub URL, or `''` to hide the footer source link.
+   - `toptalBadgeUrl` to their Toptal profile, or `''` to hide the Toptal badge
+     in Contact (most people leave this empty).
 
 4. **Turn off what they do not have.** If a section has no content (for
    example, no certifications), set its toggle to `false` in

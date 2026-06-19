@@ -3,27 +3,29 @@ import { Reveal } from './Reveal';
 
 interface SectionProps {
   id: string;
-  /** Small monospace-style index, e.g. "01". */
+  /** Small monospace index, e.g. "01". */
   index: string;
   title: string;
   children: ReactNode;
   className?: string;
 }
 
-/** Consistent section frame: anchor id, numbered eyebrow, title, content. */
+/**
+ * Consistent section frame: anchor id, numbered mono eyebrow, serif title, and
+ * a trailing rule. Width is controlled by the page shell (the content column),
+ * so this adds no container of its own.
+ */
 export function Section({ id, index, title, children, className }: SectionProps) {
   return (
-    <section id={id} className={`scroll-mt-20 py-20 md:py-28 ${className ?? ''}`}>
-      <div className="container-content">
-        <Reveal>
-          <div className="mb-10 flex items-center gap-4 md:mb-14">
-            <span className="font-display text-sm font-medium text-accent">{index}</span>
-            <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
-            <span className="h-px flex-1 bg-border" />
-          </div>
-        </Reveal>
-        {children}
-      </div>
+    <section id={id} className={`py-16 first:pt-12 md:py-20 ${className ?? ''}`}>
+      <Reveal>
+        <div className="mb-10 flex items-baseline gap-4">
+          <span className="font-mono text-sm font-medium text-accent">{index}</span>
+          <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
+          <span className="ml-2 h-px flex-1 translate-y-[-0.35rem] bg-border" />
+        </div>
+      </Reveal>
+      {children}
     </section>
   );
 }

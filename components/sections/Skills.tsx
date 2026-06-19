@@ -5,16 +5,18 @@ import { portfolio } from '@/data/portfolio';
 export function Skills() {
   return (
     <Section id="skills" index="02" title="Skills">
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="divide-y divide-border border-y border-border">
         {portfolio.skills.map((group, i) => (
-          <Reveal key={group.title} delay={(i % 3) * 0.06}>
-            <div className="group h-full rounded-lg border border-border bg-card p-5 transition-colors hover:border-accent/50">
-              <h3 className="font-display text-sm font-semibold text-secondary">{group.title}</h3>
-              <ul className="mt-3 flex flex-wrap gap-2">
+          <Reveal key={group.title} delay={Math.min(i, 4) * 0.04}>
+            <div className="grid gap-3 py-5 sm:grid-cols-[11rem_1fr] sm:gap-6">
+              <h3 className="pt-1 font-mono text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                {group.title}
+              </h3>
+              <ul className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-md bg-muted px-2.5 py-1 text-sm text-foreground/90 transition-colors group-hover:text-foreground"
+                    className="rounded-md border border-border bg-card px-2.5 py-1 text-sm text-secondary transition-colors hover:border-accent/50 hover:text-foreground"
                   >
                     {item}
                   </li>

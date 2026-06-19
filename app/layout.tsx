@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/config/site.config';
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
@@ -10,9 +10,18 @@ const inter = Inter({
   display: 'swap',
 });
 
-const spaceGrotesk = Space_Grotesk({
+// Editorial display serif. Variable optical sizing gives the big headlines a
+// magazine feel while the body stays in the technical Inter/JetBrains pairing.
+const fraunces = Fraunces({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-fraunces',
+  display: 'swap',
+  axes: ['opsz', 'SOFT'],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
   display: 'swap',
 });
 
@@ -52,7 +61,11 @@ const accentStyle =
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <style dangerouslySetInnerHTML={{ __html: accentStyle }} />
       </head>

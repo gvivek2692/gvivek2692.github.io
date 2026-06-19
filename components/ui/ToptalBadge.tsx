@@ -2,7 +2,7 @@
 
 const hexClip = 'polygon(50% 0,100% 24%,100% 76%,50% 100%,0 76%,0 24%)';
 
-export function ToptalBadge() {
+export function ToptalBadge({ href }: { href: string }) {
   return (
     <div style={{ fontFamily: 'proxima-nova, Arial, sans-serif' }}>
       <style>{`@import "https://use.typekit.net/kmj5qkr.css";`}</style>
@@ -54,7 +54,7 @@ export function ToptalBadge() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.toptal.com/developers/resume/muhammad-raza-master#XM93lX"
+            href={href}
             style={{
               display: 'inline-flex',
               alignItems: 'center',

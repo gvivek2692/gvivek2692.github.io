@@ -6,42 +6,50 @@ import { portfolio } from '@/data/portfolio';
 export function Projects() {
   return (
     <Section id="projects" index="04" title="Projects">
-      <div className="grid gap-5 md:grid-cols-2">
+      <ul className="space-y-2">
         {portfolio.projects.map((project, i) => (
-          <Reveal key={project.name} delay={(i % 2) * 0.06}>
-            <a
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex h-full flex-col rounded-lg border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="font-display text-lg font-semibold transition-colors group-hover:text-accent">
-                  {project.name}
-                </h3>
-                <div className="flex shrink-0 items-center gap-2">
+          <Reveal key={project.name} delay={Math.min(i, 4) * 0.04}>
+            <li>
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group -mx-4 block rounded-lg p-4 transition-colors hover:bg-card hover:shadow-sm cursor-pointer"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-display text-xl font-semibold leading-snug transition-colors group-hover:text-accent">
+                    {project.name}
+                    <ArrowUpRight
+                      className="ml-1 inline-block h-4 w-4 -translate-y-0.5 text-muted-foreground transition-all group-hover:-translate-y-1 group-hover:translate-x-0.5 group-hover:text-accent"
+                      aria-hidden="true"
+                    />
+                  </h3>
                   {project.tag && (
-                    <span className="rounded-full border border-border px-2 py-0.5 text-xs text-muted-foreground">
+                    <span className="shrink-0 rounded-full border border-border px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
                       {project.tag}
                     </span>
                   )}
-                  <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden="true" />
                 </div>
-              </div>
 
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-secondary">{project.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-secondary text-pretty">
+                  {project.description}
+                </p>
 
-              <ul className="mt-4 flex flex-wrap gap-1.5">
-                {project.tech.map((t) => (
-                  <li key={t} className="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </a>
+                <ul className="mt-3 flex flex-wrap gap-1.5">
+                  {project.tech.map((t) => (
+                    <li
+                      key={t}
+                      className="rounded-full bg-muted px-2.5 py-0.5 font-mono text-[11px] text-muted-foreground"
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </a>
+            </li>
           </Reveal>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }

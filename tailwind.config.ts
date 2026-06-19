@@ -30,10 +30,14 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'var(--font-inter)', 'sans-serif'],
+        // Editorial serif for headlines and the name. Variable optical sizing.
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        // Technical voice: indices, eyebrows, metadata, tech tags.
+        mono: ['var(--font-jetbrains-mono)', 'ui-monospace', 'monospace'],
       },
       maxWidth: {
         content: '72rem',
+        rail: '90rem',
       },
       keyframes: {
         'fade-up': {

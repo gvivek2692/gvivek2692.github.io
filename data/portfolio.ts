@@ -73,7 +73,7 @@ export interface PortfolioData {
 export const portfolio: PortfolioData = {
   about: {
     paragraphs: [
-      'I build and scale iOS apps that thousands of people use every day. Over the past decade I have worked across fintech, healthcare, messaging, and consumer products, usually as the person responsible for the app end to end.',
+      'I build iOS apps that thousands of people use daily. Over the past decade I have worked across fintech, healthcare, messaging, and consumer products, usually as the person responsible for the app end to end.',
       'My core is Swift, SwiftUI, UIKit, and Combine, and I know my way around clean architecture and CI/CD. Lately I have folded AI-assisted workflows into how I ship, including the Claude API and Claude Code. When an idea needs a web home, I build it full-stack in Next.js.',
       'I am a Toptal verified expert based in Berlin, open to senior and lead engineering roles, remote or hybrid.',
     ],
@@ -134,9 +134,9 @@ export const portfolio: PortfolioData = {
       points: [
         'Lead the iOS app end to end, from requirements through App Store release and ongoing release management.',
         'Hold a crash-free user rate above 99.84% through code quality work and architectural decisions.',
-        'Integrated Apple Pay, Stripe, and the Google Maps API to widen what the product can do.',
+        "Integrated Apple Pay, Stripe, and the Google Maps API to expand the app's payment and location features.",
         'Built the CI/CD pipeline and wrote the coding style guidelines the team now follows.',
-        'Run technical interviews, code reviews, and pairing sessions to raise the bar across the team.',
+        'Run technical interviews, code reviews, and pairing sessions to keep code quality and team standards high.',
         'Shipped Claude API and AI chatbot features using AI-assisted development workflows.',
       ],
       tech: ['Swift', 'SwiftUI', 'UIKit', 'Apple Pay', 'Stripe', 'Claude API', 'GA4', 'TestFlight'],
@@ -145,8 +145,8 @@ export const portfolio: PortfolioData = {
       role: 'iOS Developer',
       company: 'ASD.ai',
       location: 'Remote',
-      start: '2020',
-      end: '2022',
+      start: 'Aug 2020',
+      end: 'Jan 2022',
       via: 'via Toptal',
       points: [
         'Built Rootines, an iOS app that helps clinicians track daily routines for neurodiverse patients.',
@@ -176,6 +176,7 @@ export const portfolio: PortfolioData = {
       location: 'Remote',
       start: 'May 2018',
       end: 'Dec 2018',
+      via: 'Contract',
       points: [
         'Built a fintech iOS app from zero to launch that let non-technical users invest in crypto.',
         'Implemented custom UI and animations from Figma specs and integrated Rave for card payments.',

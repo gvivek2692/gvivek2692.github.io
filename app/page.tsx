@@ -1,6 +1,7 @@
 import { MotionConfig } from 'framer-motion';
 import { siteConfig } from '@/config/site.config';
 import { Nav } from '@/components/ui/Nav';
+import { Rail } from '@/components/ui/Rail';
 import { Footer } from '@/components/ui/Footer';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Hero } from '@/components/sections/Hero';
@@ -30,14 +31,22 @@ export default function Home() {
     <MotionConfig reducedMotion="user">
       <ScrollProgress />
       <Nav />
-      <main>
-        <Hero />
-        {sections.map((key) => {
-          const SectionComponent = registry[key];
-          return <SectionComponent key={key} />;
-        })}
-      </main>
-      <Footer />
+      {/*
+        Editorial two-column shell: a sticky identity Rail on the left (lg+) and
+        the scrolling content on the right. Below lg the Rail collapses and the
+        Hero + mobile Nav take over, so content always reads top to bottom.
+      */}
+      <div className="container-rail lg:flex lg:gap-16 xl:gap-24">
+        <Rail />
+        <main className="lg:w-[58%] lg:py-24 xl:w-[60%]">
+          <Hero />
+          {sections.map((key) => {
+            const SectionComponent = registry[key];
+            return <SectionComponent key={key} />;
+          })}
+          <Footer />
+        </main>
+      </div>
     </MotionConfig>
   );
 }

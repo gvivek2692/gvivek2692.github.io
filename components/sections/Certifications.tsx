@@ -6,14 +6,14 @@ import { portfolio } from '@/data/portfolio';
 export function Certifications() {
   return (
     <Section id="certifications" index="06" title="Certifications">
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-x-8 gap-y-px sm:grid-cols-2">
         {portfolio.certifications.map((c, i) => (
-          <Reveal key={c.name} delay={(i % 3) * 0.05}>
-            <div className="flex h-full items-start gap-3 rounded-lg border border-border bg-card p-4">
+          <Reveal key={c.name} delay={(i % 2) * 0.05}>
+            <div className="flex items-start gap-3 border-b border-border py-4">
               <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
               <div>
-                <p className="text-sm font-medium leading-snug">{c.name}</p>
-                <p className="mt-1 text-xs text-muted-foreground">
+                <p className="text-sm font-medium leading-snug text-foreground">{c.name}</p>
+                <p className="mt-1 font-mono text-xs text-muted-foreground">
                   {c.issuer} · {c.year}
                 </p>
               </div>

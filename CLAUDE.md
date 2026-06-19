@@ -17,10 +17,10 @@ agents (Cursor, Codex, Copilot, Windsurf).
 
 Almost all real edits happen in:
 
-- `config/site.config.ts` — identity, accent color, fonts, social links, SEO,
+- `config/site.config.ts`: identity, accent color, social links, SEO,
   and per-section on/off toggles. Supported social icon keys: `github`,
   `linkedin`, `medium`, `toptal`, `stackoverflow`, `mail`, `globe`.
-- `data/portfolio.ts` — all content (about, skills, experience, projects,
+- `data/portfolio.ts`: all content (about, skills, experience, projects,
   education, certifications). Typed, so the editor guides changes.
 
 Do not hardcode personal strings in components. If a component needs new
@@ -30,9 +30,9 @@ keeps the project forkable.
 ## Layout
 
 ```
-app/                 layout.tsx (fonts, theme, SEO), page.tsx (assembles sections), globals.css (tokens)
-components/sections/ Hero, About, Skills, Experience, Projects, Education, Certifications, Contact
-components/ui/       Nav, Footer, ThemeToggle, ThemeProvider, ScrollProgress, Reveal, TypingText, Section, SocialIcon
+app/                 layout.tsx (fonts, theme, SEO), page.tsx (two-column rail shell, assembles sections), globals.css (tokens)
+components/sections/ Hero (mobile-only identity), About, Skills, Experience, Projects, Education, Certifications, Contact
+components/ui/       Nav (mobile top bar), Rail (desktop identity + scroll-spy nav), Footer, ThemeToggle, ThemeProvider, ScrollProgress, Reveal, TypingText, Section, SocialIcon, ToptalBadge
 config/              site.config.ts
 data/                portfolio.ts
 lib/                 asset.ts (basePath-aware asset URLs)
@@ -49,21 +49,30 @@ accent is the one rebrand knob: it is injected at runtime from
 `siteConfig.accentRGB` in `app/layout.tsx`, so changing the config recolors the
 whole site. Full spec in `DESIGN_SYSTEM.md`.
 
-Direction: monochrome zinc neutrals, one blue accent, editorial and technical.
-Headings use Space Grotesk, body uses Inter. Motion is restrained and respects
-`prefers-reduced-motion`. Do not drift toward generic AI-template looks (no
-purple gradients, no glassmorphism everywhere, no emoji as icons, use Lucide).
+Direction: monochrome zinc neutrals (warm paper in light, near-black in dark),
+one blue accent, editorial and technical. Three type voices: display headings
+use **Fraunces** (variable serif, optical sizing), body uses **Inter**, and
+technical metadata (section indices, eyebrows, dates, tech tags) uses
+**JetBrains Mono**. Motion is restrained and respects `prefers-reduced-motion`.
+Do not drift toward generic AI-template looks (no purple gradients, no
+glassmorphism everywhere, no emoji as icons, use Lucide).
+
+Layout: on desktop (lg+) a sticky left identity rail (`Rail.tsx`) carries the
+name, tagline, actions, socials, and a scroll-spy section nav while the content
+column scrolls on the right. Below lg the rail collapses and the top `Nav` plus
+mobile `Hero` take over, so the page always reads top to bottom. Default theme
+follows the system preference.
 
 ## Quality process
 
 After every task, before reporting it complete:
 
-1. **Code review** — check for bugs, regressions, type errors, and missed edge
+1. **Code review**: check for bugs, regressions, type errors, and missed edge
    cases in every file touched.
-2. **Test like a human** — start the dev server (`preview_start`) and scroll
+2. **Test like a human**: start the dev server (`preview_start`) and scroll
    through every affected section. Check both mobile (375px) and desktop
    (1280px+) viewports. Verify light mode and dark mode if styling changed.
-3. **Analyze like a professional recruiter** — review any copy changes for
+3. **Analyze like a professional recruiter**: review any copy changes for
    accuracy, impact, clarity, and professionalism. Flag anything that would
    concern a technical hiring manager (vague metrics, unknown tool names,
    unexplained date gaps, AI writing patterns).
@@ -84,8 +93,8 @@ this". State what will be committed and wait for a yes.
 
 ## Vendored skills
 
-- `.claude/skills/humanizer` — removes AI writing patterns (from blader/humanizer).
-- `.claude/skills/ui-ux-pro-max` — design intelligence used to pick and check
+- `.claude/skills/humanizer`: removes AI writing patterns (from blader/humanizer).
+- `.claude/skills/ui-ux-pro-max`: design intelligence used to pick and check
   the design system (from nextlevelbuilder). Run its generator with
   `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system --stack nextjs`.
 
@@ -93,8 +102,8 @@ Both are MIT licensed. See `.claude/skills/CREDITS.md`.
 
 ## Commands
 
-- `npm run dev` — local dev server
-- `npm run build` — production build and static export to `out/`
+- `npm run dev`: local dev server
+- `npm run build`: production build and static export to `out/`
 - Deploy is automatic: push to the default branch triggers `.github/workflows/deploy.yml`.
 
 ## Commits

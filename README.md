@@ -7,12 +7,16 @@ make it yours by editing two files. No build tooling to learn, no backend.
 **Live:** https://mrazam110.github.io
 **Article:** [I built a developer portfolio you can fill with one AI prompt](https://medium.com/@mrazam110/i-built-a-developer-portfolio-you-can-fill-with-one-ai-prompt-cee95a2be262)
 
-![Preview](public/og-image.png)
+![Desktop and mobile views of the portfolio](screenshots/hero.png)
+
+<p align="center"><sub>An editorial rail on desktop (dark) and a focused single column on mobile (light): one responsive design with built-in light and dark themes.</sub></p>
 
 ## Why use this
 
 - Your content lives in two typed files. You never touch component code.
-- Dark first, with a light toggle and one accent color you change in one line.
+- Editorial, type-led design (serif display, mono technical accents) in light and
+  dark, following the system preference, with a manual toggle and one accent color
+  you change in one line.
 - Sections you can switch on or off: about, skills, experience, projects,
   education, certifications, contact.
 - Animations that stay out of the way and respect reduced-motion.
@@ -62,23 +66,37 @@ Everything personal lives here. The rest is the engine.
 
 ### 1. `config/site.config.ts` (who you are and how it looks)
 
+The file is fully typed, so your editor flags anything missing or misspelled.
+This is the complete shape:
+
 ```ts
 name: 'Your Name',
-logoText: 'You',            // short text for the nav logo
+logoText: 'You',             // nav logo text; defaults to your first name if ''
 role: 'Software Engineer',
 tagline: 'One line about you.',
+location: 'City, Country',
 email: 'you@example.com',
-url: 'https://you.github.io',
-resumePath: '/cv.pdf',      // file in /public, or '' to hide the button
+phone: '',                   // optional; '' hides it
+url: 'https://you.github.io',// deployed site URL (canonical + social tags)
+resumePath: '/cv.pdf',       // file in /public, or '' to hide the button
+repoUrl: 'https://github.com/you/you.github.io', // footer link, or '' to hide
+toptalBadgeUrl: '',          // Toptal profile URL, or '' to hide the badge
 
-accentRGB: '37 99 235',     // brand color as "R G B" (light mode)
-accentRGBDark: '59 130 246',// brand color in dark mode
+accentRGB: '37 99 235',      // brand color as "R G B" (light mode)
+accentRGBDark: '59 130 246', // brand color in dark mode
 
 heroRotatingWords: ['iOS Developer', 'Full-Stack Developer'],
 
-socials: [ /* github, linkedin, etc. */ ],
+socials: [
+  { label: 'GitHub', href: 'https://github.com/you', icon: 'github' },
+  // icon: github | linkedin | medium | toptal | stackoverflow | mail | globe
+],
 
-sections: { about: true, skills: true, /* ... set any to false */ },
+// Toggle sections on/off; navOrder sets their order (only enabled ones show).
+sections: { about: true, skills: true, experience: true, projects: true,
+            education: true, certifications: true, contact: true },
+navOrder: ['about', 'skills', 'experience', 'projects', 'education',
+           'certifications', 'contact'],
 ```
 
 ### 2. `data/portfolio.ts` (your content)
@@ -89,8 +107,9 @@ guide you as you type. To add an experience, copy an existing block in the
 
 ### What you do not touch
 
-`app/`, `components/`, `next.config.js`, `tailwind.config.ts`, and the deploy
-workflow. They are the engine and they stay the same.
+`app/`, `components/`, `lib/`, `next.config.js`, `tailwind.config.ts`,
+`package.json`, and the deploy workflow. They are the engine and they stay the
+same.
 
 ## Customizing
 

@@ -19,10 +19,10 @@ export type SectionKey =
   | 'contact';
 
 export interface SocialLink {
-  /** Lucide icon name is resolved in components; label is the accessible name. */
+  /** Accessible name for the link (used as its aria-label). */
   label: string;
   href: string;
-  /** One of the keys handled in components/ui/SocialIcons. */
+  /** Which brand glyph to show. Each key maps to an SVG in components/ui/SocialIcon.tsx. */
   icon: 'github' | 'linkedin' | 'toptal' | 'stackoverflow' | 'mail' | 'globe' | 'medium';
 }
 
@@ -42,11 +42,20 @@ export interface SiteConfig {
   url: string;
   /** Path to the downloadable CV inside /public. Leave empty to hide the button. */
   resumePath: string;
+  /** Optional link to this site's source repo, shown in the footer. Leave empty to hide the line. */
+  repoUrl: string;
+  /**
+   * Optional Toptal profile or resume URL. When set, the Toptal "Top 3% Talent"
+   * badge appears in the Contact section. Leave empty to hide the badge.
+   */
+  toptalBadgeUrl: string;
 
   /**
    * Single accent color as an "R G B" string (no commas). This is the one
    * rebrand knob. Default is a professional blue. Try "5 150 105" (emerald)
-   * or "124 58 237" (violet) if you want a different feel.
+   * or "124 58 237" (violet) if you want a different feel. Pick a shade dark
+   * enough that white text stays readable on the solid accent buttons (aim for
+   * a 4.5:1 contrast ratio against white).
    */
   accentRGB: string;
   /** Same idea for the accent used in dark mode (usually a touch lighter). */
@@ -75,6 +84,8 @@ export const siteConfig: SiteConfig = {
   phone: '',
   url: 'https://mrazam110.github.io',
   resumePath: '/cv.pdf',
+  repoUrl: 'https://github.com/mrazam110/mrazam110.github.io',
+  toptalBadgeUrl: 'https://www.toptal.com/developers/resume/muhammad-raza-master#XM93lX',
 
   accentRGB: '37 99 235', // #2563EB
   accentRGBDark: '59 130 246', // #3B82F6
