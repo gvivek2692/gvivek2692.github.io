@@ -64,25 +64,37 @@ Everything personal lives here. The rest is the engine.
 
 ### 1. `config/site.config.ts` (who you are and how it looks)
 
+The file is fully typed, so your editor flags anything missing or misspelled.
+This is the complete shape:
+
 ```ts
 name: 'Your Name',
-logoText: 'You',            // short text for the nav logo
+logoText: 'You',             // nav logo text; defaults to your first name if ''
 role: 'Software Engineer',
 tagline: 'One line about you.',
+location: 'City, Country',
 email: 'you@example.com',
-url: 'https://you.github.io',
-resumePath: '/cv.pdf',      // file in /public, or '' to hide the button
+phone: '',                   // optional; '' hides it
+url: 'https://you.github.io',// deployed site URL (canonical + social tags)
+resumePath: '/cv.pdf',       // file in /public, or '' to hide the button
 repoUrl: 'https://github.com/you/you.github.io', // footer link, or '' to hide
-toptalBadgeUrl: '',         // Toptal profile URL, or '' to hide the badge
+toptalBadgeUrl: '',          // Toptal profile URL, or '' to hide the badge
 
-accentRGB: '37 99 235',     // brand color as "R G B" (light mode)
-accentRGBDark: '59 130 246',// brand color in dark mode
+accentRGB: '37 99 235',      // brand color as "R G B" (light mode)
+accentRGBDark: '59 130 246', // brand color in dark mode
 
 heroRotatingWords: ['iOS Developer', 'Full-Stack Developer'],
 
-socials: [ /* github, linkedin, etc. */ ],
+socials: [
+  { label: 'GitHub', href: 'https://github.com/you', icon: 'github' },
+  // icon: github | linkedin | medium | toptal | stackoverflow | mail | globe
+],
 
-sections: { about: true, skills: true, /* ... set any to false */ },
+// Toggle sections on/off; navOrder sets their order (only enabled ones show).
+sections: { about: true, skills: true, experience: true, projects: true,
+            education: true, certifications: true, contact: true },
+navOrder: ['about', 'skills', 'experience', 'projects', 'education',
+           'certifications', 'contact'],
 ```
 
 ### 2. `data/portfolio.ts` (your content)
@@ -93,8 +105,9 @@ guide you as you type. To add an experience, copy an existing block in the
 
 ### What you do not touch
 
-`app/`, `components/`, `next.config.js`, `tailwind.config.ts`, and the deploy
-workflow. They are the engine and they stay the same.
+`app/`, `components/`, `lib/`, `next.config.js`, `tailwind.config.ts`,
+`package.json`, and the deploy workflow. They are the engine and they stay the
+same.
 
 ## Customizing
 
