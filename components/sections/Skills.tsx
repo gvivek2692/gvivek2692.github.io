@@ -5,7 +5,7 @@ import { portfolio } from '@/data/portfolio';
 export function Skills() {
   return (
     <Section id="skills" index="02" title="Skills">
-      <div className="divide-y divide-border border-y border-border">
+      <div className="divide-y divide-border">
         {portfolio.skills.map((group, i) => (
           <Reveal key={group.title} delay={Math.min(i, 4) * 0.04}>
             <div className="grid gap-3 py-5 sm:grid-cols-[11rem_1fr] sm:gap-6">
