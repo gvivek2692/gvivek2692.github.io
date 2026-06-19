@@ -54,6 +54,27 @@ Headings use Space Grotesk, body uses Inter. Motion is restrained and respects
 `prefers-reduced-motion`. Do not drift toward generic AI-template looks (no
 purple gradients, no glassmorphism everywhere, no emoji as icons, use Lucide).
 
+## Quality process
+
+After every task, before reporting it complete:
+
+1. **Code review** — check for bugs, regressions, type errors, and missed edge
+   cases in every file touched.
+2. **Test like a human** — start the dev server (`preview_start`) and scroll
+   through every affected section. Check both mobile (375px) and desktop
+   (1280px+) viewports. Verify light mode and dark mode if styling changed.
+3. **Analyze like a professional recruiter** — review any copy changes for
+   accuracy, impact, clarity, and professionalism. Flag anything that would
+   concern a technical hiring manager (vague metrics, unknown tool names,
+   unexplained date gaps, AI writing patterns).
+4. Fix all issues found before reporting done.
+
+## Commits and deploys
+
+**Always ask the user before running `git commit` or `git push`.** Never commit
+or push without explicit approval, even when asked to "make changes" or "fix
+this". State what will be committed and wait for a yes.
+
 ## Writing rules
 
 - Never use em dashes or en dashes. Hard rule. Use commas, periods, colons, or

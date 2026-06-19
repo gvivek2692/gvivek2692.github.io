@@ -143,20 +143,6 @@ export const portfolio: PortfolioData = {
     },
     {
       role: 'iOS Developer',
-      company: 'Qtego Fundraising Services',
-      location: 'Remote',
-      start: '2022',
-      end: '2022',
-      via: 'via Toptal',
-      points: [
-        'Built an iOS app that talks to payment card readers over Core Bluetooth, supporting swipe, tap, and insert.',
-        'Gathered requirements and proposed the technical approach that shaped the final architecture.',
-        'Delivered daily demos and progress updates to stakeholders.',
-      ],
-      tech: ['Swift', 'SwiftUI', 'Core Bluetooth', 'Alamofire', 'Stripe', 'TestFlight'],
-    },
-    {
-      role: 'iOS Developer',
       company: 'ASD.ai',
       location: 'Remote',
       start: '2020',
@@ -188,8 +174,8 @@ export const portfolio: PortfolioData = {
       role: 'iOS Developer',
       company: 'CoinBundle',
       location: 'Remote',
-      start: '2018',
-      end: '2018',
+      start: 'May 2018',
+      end: 'Dec 2018',
       points: [
         'Built a fintech iOS app from zero to launch that let non-technical users invest in crypto.',
         'Implemented custom UI and animations from Figma specs and integrated Rave for card payments.',

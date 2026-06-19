@@ -34,6 +34,25 @@ keeps the project forkable.
 `app/`, `components/`, `lib/`, `next.config.js`, `tailwind.config.ts`,
 `package.json`, and `.github/workflows/` are the engine. Leave them alone.
 
+## Quality process
+
+After every task, before reporting it complete:
+
+1. Code review: check for bugs, regressions, type errors, and missed edge cases
+   in every file touched.
+2. Test like a human: run the dev server and scroll through every affected
+   section. Check both mobile (375px) and desktop (1280px+) viewports.
+3. Analyze like a professional recruiter: review any copy changes for accuracy,
+   impact, and professionalism. Flag vague metrics, unknown tool names,
+   unexplained date gaps, and AI writing patterns.
+4. Fix all issues before reporting done.
+
+## Commits and deploys
+
+Always ask the user before running `git commit` or `git push`. Never commit or
+push without explicit approval, even when asked to "make changes" or "fix this".
+State what will be committed and wait for a yes.
+
 ## Writing rules
 
 Never use em dashes or en dashes. Hard rule. Use commas, periods, colons, or

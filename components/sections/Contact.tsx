@@ -3,6 +3,7 @@ import { Section } from '@/components/ui/Section';
 import { Reveal } from '@/components/ui/Reveal';
 import { siteConfig } from '@/config/site.config';
 import { SocialIcon } from '@/components/ui/SocialIcon';
+import { ToptalBadge } from '@/components/ui/ToptalBadge';
 
 export function Contact() {
   return (
@@ -39,6 +40,12 @@ export function Contact() {
               </a>
             ))}
           </div>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.15}>
+        <div className="mt-10 flex justify-center">
+          <ToptalBadge />
         </div>
       </Reveal>
     </Section>
