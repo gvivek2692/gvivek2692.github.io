@@ -7,13 +7,9 @@ make it yours by editing two files. No build tooling to learn, no backend.
 **Live:** https://mrazam110.github.io
 **Article:** [I built a developer portfolio you can fill with one AI prompt](https://medium.com/@mrazam110/i-built-a-developer-portfolio-you-can-fill-with-one-ai-prompt-cee95a2be262)
 
-![Desktop view](screenshots/desktop.png)
+![Desktop and mobile views of the portfolio](screenshots/hero.png)
 
-<p align="center">
-  <img src="screenshots/mobile.png" width="300" alt="Mobile view" />
-</p>
-
-<p align="center"><sub>Desktop (dark) and mobile (light): one responsive design with built-in light and dark themes.</sub></p>
+<p align="center"><sub>An editorial rail on desktop (dark) and a focused single column on mobile (light): one responsive design with built-in light and dark themes.</sub></p>
 
 ## Why use this
 
