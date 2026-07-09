@@ -90,7 +90,7 @@ export const siteConfig: SiteConfig = {
   logoText: 'Vivek',
   role: 'Staff Machine Learning Engineer',
   tagline:
-    'Staff ML Engineer with 10+ years building production-grade AI systems across fintech, marketplaces, and ad-tech. Leading agentic AI at PayPal. IIT Kanpur.',
+    'Staff ML Engineer with 10+ years building production-grade AI systems across fintech, ecommerce, and strategy consulting.',
   location: 'Bangalore, India',
   email: 'gvivek2692@gmail.com',
   phone: '+91 98156 19602',
