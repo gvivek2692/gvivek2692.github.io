@@ -23,18 +23,20 @@ export function About() {
         ))}
       </div>
 
-      <Reveal delay={0.1}>
-        <dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
-          {highlights.map((h) => (
-            <div key={h.label} className="bg-card p-5">
-              <dt className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                {h.label}
-              </dt>
-              <dd className="mt-2 font-display text-xl font-semibold">{h.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </Reveal>
+      {highlights.length > 0 && (
+        <Reveal delay={0.1}>
+          <dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
+            {highlights.map((h) => (
+              <div key={h.label} className="bg-card p-5">
+                <dt className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  {h.label}
+                </dt>
+                <dd className="mt-2 font-display text-xl font-semibold">{h.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      )}
     </Section>
   );
 }

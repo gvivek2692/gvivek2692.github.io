@@ -64,6 +64,18 @@ export interface SiteConfig {
   /** Words the hero cycles through after your role. Keep them short. */
   heroRotatingWords: string[];
 
+  /**
+   * Compact facts shown as a single dotted line under the name (Rail + Hero),
+   * e.g. ["10+ yrs", "Agentic AI & ML", "Bangalore"]. Keep each item short.
+   */
+  heroMeta: string[];
+
+  /**
+   * Companies shown as a "worked at" logo strip near the top. `logo` is a path
+   * to an image in /public; `href` links the logo to the company website.
+   */
+  companies: { name: string; logo: string; href: string }[];
+
   socials: SocialLink[];
 
   /** Turn sections on or off without deleting any code. */
@@ -74,48 +86,52 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Muhammad Raza Master',
-  logoText: 'Raza',
-  role: 'Senior iOS & Full-Stack Engineer',
+  name: 'Vivek Gupta',
+  logoText: 'Vivek',
+  role: 'Staff Machine Learning Engineer',
   tagline:
-    'I build high-performance iOS applications and AI-driven full-stack products. 13+ years of engineering experience, Toptal verified, and based in Berlin.',
-  location: 'Berlin, Germany',
-  email: 'mrazam110@gmail.com',
-  phone: '',
-  url: 'https://mrazam110.github.io',
+    'Staff ML Engineer with 10+ years building production-grade AI systems across fintech, marketplaces, and ad-tech. Leading agentic AI at PayPal. IIT Kanpur.',
+  location: 'Bangalore, India',
+  email: 'gvivek2692@gmail.com',
+  phone: '+91 98156 19602',
+  url: 'https://gvivek2692.github.io',
   resumePath: '/cv.pdf',
-  repoUrl: 'https://github.com/mrazam110/mrazam110.github.io',
-  toptalBadgeUrl: 'https://www.toptal.com/developers/resume/muhammad-raza-master#XM93lX',
+  repoUrl: 'https://github.com/gvivek2692/gvivek2692.github.io',
+  toptalBadgeUrl: 'https://www.toptal.com/developers/resume/vivek-gupta2',
 
   accentRGB: '37 99 235', // #2563EB
   accentRGBDark: '59 130 246', // #3B82F6
 
   heroRotatingWords: [
-    'iOS Developer',
-    'Full-Stack Developer',
-    'Swift & SwiftUI',
-    'AI-Assisted Development',
+    'Agentic AI Systems',
+    'RAG & LLM Evaluation',
+    'LangGraph & CrewAI',
+    'ML at Scale',
+  ],
+
+  heroMeta: ['10+ yrs experience', 'Agentic AI & ML', 'Bangalore'],
+
+  companies: [
+    { name: 'PayPal', logo: '/logos/paypal.png', href: 'https://www.paypal.com' },
+    { name: 'Cars24', logo: '/logos/cars24.png', href: 'https://www.cars24.com' },
+    { name: 'Bain & Company', logo: '/logos/bain.png', href: 'https://www.bain.com' },
+    { name: 'IndMoney', logo: '/logos/indmoney.png', href: 'https://www.indmoney.com' },
   ],
 
   socials: [
-    { label: 'GitHub', href: 'https://github.com/mrazam110', icon: 'github' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mrazam110', icon: 'linkedin' },
-    { label: 'Medium', href: 'https://medium.com/@mrazam110', icon: 'medium' },
+    { label: 'GitHub', href: 'https://github.com/gvivek2692', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/vivek-gupta-81968646/', icon: 'linkedin' },
     {
       label: 'Toptal',
-      href: 'https://www.toptal.com/developers/resume/muhammad-raza-master',
+      href: 'https://www.toptal.com/developers/resume/vivek-gupta2',
       icon: 'toptal',
     },
-    {
-      label: 'Stack Overflow',
-      href: 'https://stackoverflow.com/users/3847946/muhammad-raza',
-      icon: 'stackoverflow',
-    },
+    { label: 'Email', href: 'mailto:gvivek2692@gmail.com', icon: 'mail' },
   ],
 
   sections: {
     about: true,
-    skills: true,
+    skills: false,
     experience: true,
     projects: true,
     education: true,
@@ -125,10 +141,10 @@ export const siteConfig: SiteConfig = {
 
   navOrder: [
     'about',
+    'education',
     'skills',
     'experience',
     'projects',
-    'education',
     'certifications',
     'contact',
   ],

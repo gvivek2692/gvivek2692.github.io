@@ -25,20 +25,17 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden lg:hidden">
       <div className="absolute inset-0 hero-grid" aria-hidden="true" />
 
-      <div className="relative flex min-h-[88vh] flex-col justify-center py-24">
-        <motion.p
-          custom={0}
-          initial="hidden"
-          animate="show"
-          variants={fade}
-          className="mb-6 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-secondary"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-          </span>
-          Available for work
-        </motion.p>
+      <div className="relative flex flex-col justify-center pb-12 pt-24">
+        <motion.div custom={0} initial="hidden" animate="show" variants={fade} className="mb-7">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset('/headshot.jpeg')}
+            alt={siteConfig.name}
+            width={80}
+            height={80}
+            className="h-20 w-20 rounded-full object-cover ring-1 ring-border"
+          />
+        </motion.div>
 
         <motion.h1
           custom={1}
@@ -62,15 +59,20 @@ export function Hero() {
           <TypingText words={siteConfig.heroRotatingWords} className="text-foreground" />
         </motion.div>
 
-        <motion.p
+        <motion.div
           custom={3}
           initial="hidden"
           animate="show"
           variants={fade}
-          className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground text-pretty md:text-lg"
+          className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs uppercase tracking-[0.14em] text-secondary sm:text-sm"
         >
-          {siteConfig.tagline}
-        </motion.p>
+          {siteConfig.heroMeta.map((item, i) => (
+            <span key={item} className="flex items-center gap-3">
+              {i > 0 && <span className="h-1 w-1 rounded-full bg-border" aria-hidden="true" />}
+              {item}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.div
           custom={4}

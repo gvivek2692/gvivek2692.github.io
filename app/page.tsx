@@ -5,6 +5,7 @@ import { Rail } from '@/components/ui/Rail';
 import { Footer } from '@/components/ui/Footer';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Hero } from '@/components/sections/Hero';
+import { Credentials } from '@/components/sections/Credentials';
 import { About } from '@/components/sections/About';
 import { Skills } from '@/components/sections/Skills';
 import { Experience } from '@/components/sections/Experience';
@@ -40,6 +41,7 @@ export default function Home() {
         <Rail />
         <main className="lg:w-[58%] lg:py-24 xl:w-[60%]">
           <Hero />
+          <Credentials />
           {sections.map((key) => {
             const SectionComponent = registry[key];
             return <SectionComponent key={key} />;

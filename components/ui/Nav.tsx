@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { siteConfig, type SectionKey } from '@/config/site.config';
-import { ThemeToggle } from './ThemeToggle';
 
 const labels: Record<SectionKey, string> = {
   about: 'About',
@@ -51,13 +50,9 @@ export function Nav() {
               {labels[key]}
             </a>
           ))}
-          <div className="ml-2">
-            <ThemeToggle />
-          </div>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
           <button
             type="button"
             aria-label={open ? 'Close menu' : 'Open menu'}

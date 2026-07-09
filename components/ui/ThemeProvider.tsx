@@ -1,11 +1,9 @@
 'use client';
 
-import { ThemeProvider as NextThemeProvider } from 'next-themes';
-
+/**
+ * The site is light-mode only. This is a passthrough so any imports keep
+ * working; the <html> class stays unset, so the :root (light) tokens apply.
+ */
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  return (
-    <NextThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-      {children}
-    </NextThemeProvider>
-  );
+  return <>{children}</>;
 }

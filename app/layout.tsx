@@ -35,18 +35,18 @@ export const metadata: Metadata = {
   keywords: [
     siteConfig.role,
     siteConfig.name,
-    'iOS',
-    'Swift',
-    'SwiftUI',
-    'Full-Stack',
-    'Next.js',
-    'React',
-    'TypeScript',
-    'Node.js',
-    'AI Integration',
+    'Machine Learning',
+    'Agentic AI',
     'LLM',
+    'RAG',
+    'LangGraph',
+    'CrewAI',
+    'MLOps',
+    'Data Science',
+    'PayPal',
+    'IIT Kanpur',
     'Toptal',
-    'Berlin',
+    'Bangalore',
     'portfolio',
   ],
   authors: [{ name: siteConfig.name }],
@@ -68,12 +68,9 @@ export const metadata: Metadata = {
 };
 
 // Inject the accent token from config so the whole palette rebrands from one place.
-// --accent is the per-mode value used for text, links, and icons (lighter in dark
-// mode for readability). --accent-solid is always the deeper brand blue, used for
-// solid fills with white labels so they keep 4.5:1 contrast in both modes.
-const accentStyle =
-  `:root{--accent:${siteConfig.accentRGB};--accent-solid:${siteConfig.accentRGB}}` +
-  `.dark{--accent:${siteConfig.accentRGBDark};--accent-solid:${siteConfig.accentRGB}}`;
+// --accent drives text, links, and icons. --accent-solid is the deeper brand blue
+// used for solid fills with white labels so they keep 4.5:1 contrast. Light mode only.
+const accentStyle = `:root{--accent:${siteConfig.accentRGB};--accent-solid:${siteConfig.accentRGB}}`;
 
 // Machine-readable identity for search engines, recruiter tools, and LLMs.
 // Built entirely from siteConfig so it rebrands with the rest of the site.

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import { siteConfig, type SectionKey } from '@/config/site.config';
 import { SocialIcon } from './SocialIcon';
-import { ThemeToggle } from './ThemeToggle';
 import { asset } from '@/lib/asset';
 
 const labels: Record<SectionKey, string> = {
@@ -64,6 +63,17 @@ export function Rail() {
   return (
     <header className="hidden lg:sticky lg:top-0 lg:flex lg:h-screen lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-between lg:py-24 xl:w-[40%]">
       <div>
+        <motion.div custom={0} initial="hidden" animate="show" variants={fade} className="mb-8">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset('/headshot.jpeg')}
+            alt={siteConfig.name}
+            width={96}
+            height={96}
+            className="h-24 w-24 rounded-full object-cover ring-1 ring-border"
+          />
+        </motion.div>
+
         <motion.p custom={0} initial="hidden" animate="show" variants={fade} className="eyebrow">
           {siteConfig.role}
         </motion.p>
@@ -78,15 +88,20 @@ export function Rail() {
           {siteConfig.name}
         </motion.h1>
 
-        <motion.p
+        <motion.div
           custom={2}
           initial="hidden"
           animate="show"
           variants={fade}
-          className="mt-6 max-w-sm text-base leading-relaxed text-muted-foreground text-pretty"
+          className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs uppercase tracking-[0.14em] text-secondary"
         >
-          {siteConfig.tagline}
-        </motion.p>
+          {siteConfig.heroMeta.map((item, i) => (
+            <span key={item} className="flex items-center gap-3">
+              {i > 0 && <span className="h-1 w-1 rounded-full bg-border" aria-hidden="true" />}
+              {item}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.nav
           custom={3}
@@ -152,8 +167,6 @@ export function Rail() {
               <SocialIcon icon={s.icon} className="h-5 w-5" />
             </a>
           ))}
-          <span className="mx-2 h-5 w-px bg-border" aria-hidden="true" />
-          <ThemeToggle />
         </div>
       </motion.div>
     </header>

@@ -12,10 +12,22 @@ export function Education() {
               <p className="pt-0.5 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground">
                 {e.period}
               </p>
-              <div>
-                <h3 className="font-display text-lg font-semibold leading-snug">{e.degree}</h3>
-                <p className="mt-0.5 text-sm text-secondary">{e.school}</p>
-                <p className="mt-0.5 font-mono text-xs text-muted-foreground">{e.location}</p>
+              <div className="flex items-start gap-4">
+                {e.logo && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={e.logo}
+                    alt={`${e.school} logo`}
+                    width={48}
+                    height={48}
+                    className="mt-0.5 h-12 w-12 shrink-0 object-contain"
+                  />
+                )}
+                <div>
+                  <h3 className="font-display text-lg font-semibold leading-snug">{e.degree}</h3>
+                  <p className="mt-0.5 text-sm text-secondary">{e.school}</p>
+                  <p className="mt-0.5 font-mono text-xs text-muted-foreground">{e.location}</p>
+                </div>
               </div>
             </div>
           </Reveal>

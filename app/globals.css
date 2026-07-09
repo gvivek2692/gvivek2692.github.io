@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 /*
- * Design tokens. Light mode is the default :root; dark mode overrides under
- * .dark (next-themes toggles the class on <html>). Values are "R G B" so
- * Tailwind's <alpha-value> works. The accent is injected at runtime from
+ * Design tokens (light mode only). Values are "R G B" so Tailwind's
+ * <alpha-value> works. The accent is injected at runtime from
  * config/site.config.ts in app/layout.tsx, so changing the config rebrands
  * the whole site.
  *
- * Editorial direction: warm paper neutrals in light, true near-black in dark
- * (OLED-friendly), one blue accent. Serif display + sans body + mono metadata.
+ * Editorial direction: warm paper neutrals, one blue accent. Serif display +
+ * sans body + mono metadata.
  */
 :root {
   --background: 250 250 248; /* warm paper white */
@@ -23,18 +22,6 @@
   --card: 255 255 255;
   --accent-foreground: 255 255 255;
   /* --accent is set inline by layout.tsx from siteConfig.accentRGB */
-}
-
-.dark {
-  --background: 9 9 11;
-  --foreground: 244 244 245;
-  --primary: 250 250 250;
-  --secondary: 161 161 170;
-  --muted: 24 24 27;
-  --muted-foreground: 139 139 147; /* AA: ~5.8:1 on dark background */
-  --border: 38 38 42;
-  --card: 16 16 18;
-  --accent-foreground: 255 255 255;
 }
 
 @layer base {
