@@ -3,7 +3,6 @@ import { Section } from '@/components/ui/Section';
 import { Reveal } from '@/components/ui/Reveal';
 import { siteConfig } from '@/config/site.config';
 import { SocialIcon } from '@/components/ui/SocialIcon';
-import { ToptalBadge } from '@/components/ui/ToptalBadge';
 
 export function Contact() {
   return (
@@ -40,14 +39,6 @@ export function Contact() {
           ))}
         </div>
       </Reveal>
-
-      {siteConfig.toptalBadgeUrl && (
-        <Reveal delay={0.15}>
-          <div className="mt-12">
-            <ToptalBadge href={siteConfig.toptalBadgeUrl} />
-          </div>
-        </Reveal>
-      )}
     </Section>
   );
 }

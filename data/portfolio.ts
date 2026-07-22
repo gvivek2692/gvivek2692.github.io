@@ -295,6 +295,7 @@ export const portfolio: PortfolioData = {
   ],
 
   certifications: [
+    { name: 'Claude Certified Architect - Foundations', issuer: 'Anthropic', year: '2026' },
     { name: 'Long-Term Agentic Memory With LangGraph', issuer: 'DeepLearning.AI', year: '2026' },
     { name: 'Generative AI: Working with Large Language Models', issuer: 'LinkedIn Learning', year: '2023' },
     {

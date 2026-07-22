@@ -46,9 +46,14 @@ export interface SiteConfig {
   repoUrl: string;
   /**
    * Optional Toptal profile or resume URL. When set, the Toptal "Top 3% Talent"
-   * badge appears in the Contact section. Leave empty to hide the badge.
+   * badge appears in the Verified Credentials strip. Leave empty to hide it.
    */
   toptalBadgeUrl: string;
+  /**
+   * Optional Credly verification URL. When set, the Claude Certified Architect
+   * badge appears in the Verified Credentials strip. Leave empty to hide it.
+   */
+  credlyUrl: string;
 
   /**
    * Single accent color as an "R G B" string (no commas). This is the one
@@ -98,6 +103,7 @@ export const siteConfig: SiteConfig = {
   resumePath: '/cv.pdf',
   repoUrl: 'https://github.com/gvivek2692/gvivek2692.github.io',
   toptalBadgeUrl: 'https://www.toptal.com/developers/resume/vivek-gupta2',
+  credlyUrl: 'https://www.credly.com/badges/91c48d84-8044-424e-bf18-3d3c85727afd/public_url',
 
   accentRGB: '37 99 235', // #2563EB
   accentRGBDark: '59 130 246', // #3B82F6
